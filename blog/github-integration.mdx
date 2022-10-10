@@ -4,7 +4,7 @@ date: "2022-10-10"
 slug: "github-integration"
 ---
 
-import SearchIntegration from "./snippets/search-integration.mdx"
+import IntegrationSnippet from "./snippets/integration-snippet.mdx"
 
 # GitHub
 
@@ -16,8 +16,18 @@ Setting up a GitHub integration requires you to generate a GitHub personal acces
 
  You can back up a Postman Collection to a GitHub repository. After you create the integration, any new changes to the collection in Postman will also appear in the GitHub repository.
 
-<SearchIntegration integration="GitHub" />
+<IntegrationSnippet integration="GitHub" />
 
 4. Next to **Backup a collection**, select **Add Integration**.
-
 1. Enter your GitHub **Personal Access Token** and select **Authenticate and Proceed**.
+1. Enter your GitHub **Personal Access Token** and select **Authenticate and Proceed**.
+1. After Postman verifies the token, you can configure the integration:
+
+   * Give the integration a nickname.
+   * Select the workspace with the collection you want to back up.
+   * Select a collection to back up.
+   * Select the GitHub repository where you want to back up the collection.
+   * Enter the directory where you want to push the collection. If the directory doesn't exist, Postman will create it for you. If you don't specify a directory, Postman will create a `Postman Collections` directory.
+   * Enter the file name of the collection in the repository.
+   * Enter the branch where you want to push the collection. The branch must already exist in your repository. If you don't specify a branch, Postman will push the collection to the default branch of the repository.
+1. To finish setting up the integration, select **Add Integration**.
