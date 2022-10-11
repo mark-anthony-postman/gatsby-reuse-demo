@@ -16,3 +16,26 @@ This is my first blog post for {constants.product} {constants.version}! Isn't it
 {/* Include the imported snippet and pass a value for the "color" variable */}
 
 <Snippet1 color="green" />
+
+{constants.version == "v10" ? <p>Conditional test</p> : null }
+
+{constants.version == "v10" ? <Snippet1 color="blue" /> : null }
+
+{(() => {
+    if (constants.version == "v10"){
+        return (
+            <p>Different code formatting test</p>
+        )
+    }
+    return null;
+})()}
+
+{constants.version == "v10" ?
+<div>
+    <p>Multi paragraph test</p>
+    <ul>
+        <li>One</li>
+        <li>Two</li>
+    </ul>
+</div>
+: null }
