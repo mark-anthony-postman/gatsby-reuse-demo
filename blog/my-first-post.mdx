@@ -4,11 +4,15 @@ date: "2021-07-23"
 slug: "my-first-post"
 ---
 
+{/* Import a snippet and the constants file */}
+
 import Snippet1 from "./snippets/snippet-1.mdx"
 import * as constants from "./snippets/constants.js"
 
-This is my first blog post! Isn't it *great*?
+{/* Use variables from the constants file */}
+
+This is my first blog post for {constants.product} {constants.version}! Isn't it _great_?
+
+{/* Include the imported snippet and pass a value for the "color" variable */}
 
 <Snippet1 color="green" />
-
-This is the {constants.product} {constants.version} product.
