@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `My First Gatsby Site`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Content Reuse Demo`,
+    siteUrl: `https://www.postman.com`,
   },
   plugins: [
     "gatsby-plugin-image",

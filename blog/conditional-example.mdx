@@ -1,22 +1,14 @@
 ---
-title: "My First Post"
-date: "2021-07-23"
-slug: "my-first-post"
+title: "Conditional text example"
+date: "2022-10-03"
+slug: "conditional-example"
 ---
-
-{/* Import a snippet and the constants file */}
 
 import ReactMarkdown from 'react-markdown'
 import Snippet1 from "./snippets/snippet-1.mdx"
 import * as constants from "./snippets/constants.js"
 
-{/* Use variables from the constants file */}
-
-This is my first blog post for {constants.product} {constants.version}! Isn't it _great_?
-
-{/* Include the imported snippet and pass a value for the "color" variable */}
-
-<Snippet1 color="green" />
+This page is for conditional text examples
 
 {constants.version == "v10" ? <p>Conditional test</p> : null }
 

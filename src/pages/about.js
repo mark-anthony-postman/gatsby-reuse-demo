@@ -6,8 +6,9 @@ import Seo from '../components/seo'
 // Step 2: Define your component
 const AboutPage = () => {
   return (
-    <Layout pageTitle="About Me">
-      <p>Hi there! I'm the proud creator of this site, which I built with Gatsby.</p>
+    <Layout pageTitle="About">
+      <p>This site was created by following the Gatsby tutorial.</p>
+      <p>Go to the Blog page for examples of content reuse.</p>
   </Layout>
   )
 }

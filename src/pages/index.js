@@ -7,8 +7,9 @@ import Seo from '../components/seo'
 // Step 2: Define your component
 const IndexPage = () => {
   return (
-    <Layout pageTitle="Home Page">
-      <p>I'm making this by following the Gatsby Tutorial.</p>
+    <Layout pageTitle="Home">
+      <p>This site demonstrates content reuse in Gatsby with MDX.</p>
+      <p>Go to the Blog page for examples of content reuse.</p>
       <StaticImage
         alt="Postman on a journey"
         src="../images/spectral_rules_hero.jpg"
