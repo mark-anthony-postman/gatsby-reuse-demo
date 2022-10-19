@@ -1,14 +1,20 @@
+{/* When importing snippets or constants, the path is relative to this snippet */}
+
+import * as constants from "./constants.js"
 import Snippet2 from "./snippet-2.mdx"
 
 ## Snippet 1
 
-This is snippet 1:
+{/* You can use global variables in snippets */}
+
+Here are some things to know about {constants.product} {constants.version}:
 
 {/* Use the value for the "color" variable passed in from the topic calling the snippet */}
 
-* My favorite color is {props.color}.
-* Another bullet
+* It's very {props.color}.
+* It's gluten free.
+* Everyone likes it.
 
-{/* You can insert a snippet inside a snippet, but this adds a lot of complexity and should probably be avoided */}
+{/* You can insert a snippet inside a snippet, but this adds a lot of complexity */}
 
 <Snippet2 />

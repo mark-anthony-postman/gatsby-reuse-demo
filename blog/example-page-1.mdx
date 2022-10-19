@@ -6,45 +6,13 @@ slug: "example-page-1"
 
 {/* Import a snippet and the constants file */}
 
-import ReactMarkdown from 'react-markdown'
 import Snippet1 from "./snippets/snippet-1.mdx"
 import * as constants from "./snippets/constants.js"
 
 {/* Use variables from the constants file */}
 
-This is my first blog post for {constants.product} {constants.version}! Isn't it _great_?
+This page is all about **{constants.product} {constants.version}**!
 
-{/* Include the imported snippet and pass a value for the "color" variable */}
+{/* Include the imported snippet and pass in a value for the "color" variable */}
 
-<Snippet1 color="green" />
-
-{constants.version == "v10" ? <p>Conditional test</p> : null }
-
-{constants.version == "v10" ? <Snippet1 color="blue" /> : null }
-
-{constants.version == "v10" ?
-<div>
-    <p>Multi paragraph test</p>
-    <ul>
-        <li>One</li>
-        <li>Two</li>
-    </ul>
-</div>
-: null }
-
-{constants.version == "v10" ?
-<ReactMarkdown>Test with **react-markdown**. It _kinda_ works, but for one line only.</ReactMarkdown>
-: null }
-
-{(() => {
-if (constants.version == "v10"){
-    return (
-        <div>
-            <ReactMarkdown>Another test with **react-markdown**. Using a div lets you put in mulitple lines, but list items each get rendered in a separate list.</ReactMarkdown>
-            <ReactMarkdown>* List item</ReactMarkdown>
-            <ReactMarkdown>* List item</ReactMarkdown>
-        </div>
-    )
-}
-return null;
-})()}
+<Snippet1 color="orange" />

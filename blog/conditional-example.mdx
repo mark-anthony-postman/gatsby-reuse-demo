@@ -4,35 +4,57 @@ date: "2022-10-03"
 slug: "conditional-example"
 ---
 
+{/* Import a snippet and the constants file. Also import react-markdown to use Markdown inside JSX. */}
+
 import ReactMarkdown from 'react-markdown'
-import Snippet1 from "./snippets/snippet-1.mdx"
+import Snippet3 from "./snippets/snippet-3.mdx"
 import * as constants from "./snippets/constants.js"
 
-This page is for conditional text examples
+This page shows examples of conditional content rendering.
 
-{constants.version == "v10" ? <p>Conditional test</p> : null }
+### One line conditional (JSX)
 
-{constants.version == "v10" ? <Snippet1 color="blue" /> : null }
+{/* This construction works for one line of text. It can't be used for a few words within a line as it creates a line break before and after. */}
+
+{constants.version == "v10" ? <p>This is some conditional text.</p> : null }
+
+### Snippet conditional
+
+{/* Inserting a snippet in a conditional works fine, and the snippet can have muiltple lines of Markdown */}
+
+{constants.version == "v10" ? <Snippet3 /> : null }
+
+### Multi-line conditional (JSX)
+
+{/* You can put multiple lines of JSX in a conditional if you wrap them in <div> tags */}
 
 {constants.version == "v10" ?
 <div>
-    <p>Multi paragraph test</p>
+    <p>This is a conditional list:</p>
     <ul>
-        <li>One</li>
-        <li>Two</li>
+        <li>List item</li>
+        <li>List item</li>
     </ul>
 </div>
 : null }
 
+### One line conditional (react-markdown)
+
+{/* To use Markdown inside a conditional, you need to wrap it in <ReactMarkdown> tags */}
+
 {constants.version == "v10" ?
-<ReactMarkdown>Test with **react-markdown**. It _kinda_ works, but for one line only.</ReactMarkdown>
+<ReactMarkdown>This is a test with **react-markdown**. It _kinda_ works, but for one line only.</ReactMarkdown>
 : null }
+
+### Multi-line conditional (react-markdown)
+
+{/* You can have multiple <ReactMarkdown> lines if you wrap them in a <div> tag, but the result isn't good. In this case, each list item gets places in its own list in the output. */}
 
 {(() => {
 if (constants.version == "v10"){
     return (
         <div>
-            <ReactMarkdown>Another test with **react-markdown**. Using a div lets you put in mulitple lines, but list items each get rendered in a separate list.</ReactMarkdown>
+            <ReactMarkdown>This is another test with **react-markdown**. Using a `div` lets you put in mulitple lines, but list items each get rendered in a separate list.</ReactMarkdown>
             <ReactMarkdown>* List item</ReactMarkdown>
             <ReactMarkdown>* List item</ReactMarkdown>
         </div>
