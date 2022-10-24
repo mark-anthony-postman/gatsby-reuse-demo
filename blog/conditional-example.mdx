@@ -16,7 +16,9 @@ This page shows examples of conditional content rendering.
 
 {/* This construction works for one line of text. It can't be used for a few words within a line as it creates a line break before and after. */}
 
-{constants.version == "v10" ? <p>This is some conditional text.</p> : null }
+{constants.version == "v10" ? <p>This is some conditional text for v10.</p> : null }
+
+{constants.version == "v9" ? <p>This is some different conditional text for v9.</p> : null }
 
 ### Snippet conditional
 
