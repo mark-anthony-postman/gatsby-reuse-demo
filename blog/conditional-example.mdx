@@ -20,6 +20,18 @@ This page shows examples of conditional content rendering.
 
 {constants.version == "v9" ? <p>This is some different conditional text for v9.</p> : null }
 
+{/* You can also replace 'null' with content that will show if the condition is false. */}
+
+{constants.version == "v10" ? <p>If version is v10, show this.</p> : <p>If version is not v10, show this.</p> }
+
+### Image conditional
+
+{/* You can also use conditionals with images, for example, to show screenshots for specific app versions. */}
+
+{constants.version == "v9" ? <img alt="Adding existing API documentation" src="https://assets.postman.com/postman-docs/documentation-add-api-docs-v9.jpg" width="100%" /> : null }
+
+{constants.version == "v10" ? <img alt="Adding existing API documentation" src="https://assets.postman.com/postman-docs/v10/documentation-add-api-docs-v10-0-5.jpg" width="100%" /> : null }
+
 ### Snippet conditional
 
 {/* Inserting a snippet in a conditional works fine, and the snippet can have muiltple lines of Markdown */}
